@@ -3,14 +3,14 @@
     {
       "code": "123",
       "name": "Nome produto",
-      "category": "PF",
-      "id": 2
+      "category": "atacado",
+      "id": 1
     },
     {
       "code": "1234",
       "name": "rodrigo ",
-      "category": "PJ",
-      "id": 3
+      "category": "varejo",
+      "id": 2
     }
   ]
 }

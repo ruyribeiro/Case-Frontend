@@ -13,12 +13,12 @@
 
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Nome do Produto </mat-header-cell>
-        <mat-cell *matCellDef="let product"> {{product.name}} </mat-cell>
+        <mat-cell *matCellDef="let product"> {{product.name  | titlecase }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="category">
         <mat-header-cell *matHeaderCellDef> Categoria do Produto </mat-header-cell>
-        <mat-cell *matCellDef="let product"> {{product.category}} </mat-cell>
+        <mat-cell *matCellDef="let product"> {{product.category | titlecase }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="actions">
