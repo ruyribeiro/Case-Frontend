@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Products } from '../models/products';
+import { IProducts } from '../models/products';
 import { ServiceService } from '../../services/service.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { log } from 'console';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmationComponent } from 'src/app/components/modal-confirmation/modal-confirmation.component';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,10 @@ import { ModalConfirmationComponent } from 'src/app/components/modal-confirmatio
 })
 export class HomeComponent implements OnInit {
 
-  products: Observable<Products[]>;
+  products: Observable<IProducts[]>;
   displayedColumns = ['code', 'name', 'category', 'actions'];
+
+  queryField = new FormControl();
 
   constructor(
     private productsService: ServiceService,
@@ -38,15 +41,19 @@ export class HomeComponent implements OnInit {
 
   }
 
+  onSearch() {
+
+  }
+
   onNewProduct() {
     this.router.navigate(['new-product'], {relativeTo: this.route})
   }
 
-  onEdit(product: Products) {
+  onEdit(product: IProducts) {
     this.router.navigate(['edit', product.id], {relativeTo: this.route})
   }
 
-  onDelete(product: Products) {
+  onDelete(product: IProducts) {
 
     const modalRef = this.dialog.open(ModalConfirmationComponent, {
       data: 'Tem certeza que quer excluir?'

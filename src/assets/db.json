@@ -1,16 +1,34 @@
 {
   "products": [
     {
-      "code": "123",
-      "name": "Nome produto",
-      "category": "atacado",
-      "id": 1
+      "id": "1",
+      "name": "CGI Troca de Dividas",
+      "category": "varejo"
     },
     {
-      "code": "1234",
-      "name": "rodrigo ",
-      "category": "varejo",
-      "id": 2
+      "id": "2",
+      "name": "Credito Imobiliario",
+      "category": "varejo"
+    },
+    {
+      "id": "3",
+      "name": "Credito Auto",
+      "category": "atacado"
+    },
+    {
+      "id": "4",
+      "name": "Cartão Uniclass",
+      "category": "atacado"
+    },
+    {
+      "id": "5",
+      "name": "Cartão Internacional",
+      "category": "internacional"
+    },
+    {
+      "id": "6",
+      "name": "Cartão Internacional 2.0",
+      "category": "internacional"
     }
   ]
 }

@@ -6,8 +6,8 @@
     <form [formGroup]="form" class="min-width">
       <mat-form-field class="full-width">
         <mat-label>Codigo do Produto</mat-label>
-        <input formControlName="code" matInput type="text">
-        <mat-error *ngIf="form.get('code')?.invalid">{{getErrorMessage("code")}}</mat-error>
+        <input formControlName="id" [attr.disabled]="teste()" matInput type="text">
+        <mat-error *ngIf="form.get('id')?.invalid">{{getErrorMessage("id")}}</mat-error>
       </mat-form-field>
 
       <mat-form-field class="full-width">

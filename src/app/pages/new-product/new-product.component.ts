@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServiceService } from 'src/app/services/service.service';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Products } from '../models/products';
+import { IProducts } from '../models/products';
 
 @Component({
   selector: 'app-new-product',
@@ -26,16 +26,16 @@ export class NewProductComponent implements OnInit {
     private route: ActivatedRoute
     ) {
     this.form = this.formBuilder.group({
-      code: [null, Validators.required],
+      id: [null, Validators.required],
       name: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
       category: [null, Validators.required]
     })
   }
 
   ngOnInit(): void {
-    const product: Products = this.route.snapshot.data['product'];
+    const product: IProducts = this.route.snapshot.data['product'];
     this.form.setValue({
-      code: product.code,
+      id: product.id,
       name: product.name,
       category: product.category
     })
@@ -44,11 +44,16 @@ export class NewProductComponent implements OnInit {
   }
 
   pageDescription() {
-    const rota = this.route.snapshot.url[0].path;
-    if ( rota != 'new-product') {
-      this.titlePage = 'Alteração de Produtos'
-      this.buttonText = 'Alterar Produto'
+    const route = this.route.snapshot.url[0].path;
+    if ( route != 'new-product') {
+      this.form.get('id')?.disable();
+      this.titlePage = 'Alteração de Produtos';
+      this.buttonText = 'Alterar Produto';
     }
+  }
+
+  teste() {
+    return true
   }
 
   onCancel() {
@@ -56,7 +61,7 @@ export class NewProductComponent implements OnInit {
   }
 
   onSubmit() {
-    const teste: Products = this.route.snapshot.data['product']
+    const teste: IProducts = this.route.snapshot.data['product']
     this.service.save(this.form.value, teste.id).subscribe(result => this.onSuccess(), error =>  this.onError());
   }
 

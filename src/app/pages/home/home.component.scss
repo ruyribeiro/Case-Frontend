@@ -12,3 +12,13 @@ table {
   flex-direction: column;
   min-width: 300px;
 }
+
+.container {
+	margin: 0 auto;
+	display: flex;
+}
+
+.row-reverse {
+	flex-direction: row-reverse;
+}
+

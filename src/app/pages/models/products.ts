@@ -1,6 +1,5 @@
-export interface Products {
-  id?: number;
-  code: string;
+export interface IProducts {
+  id: string;
   name: string;
   category: string;
 }

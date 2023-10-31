@@ -1,27 +1,38 @@
-# CaseGestInvest
+# Case Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+Desafio:
+Criar uma aplicação no modelo SPA usando Angular (12 ou mais recente) para consulta e cadastro de produtos que deve conter as reguintes funcionalidades:
 
-## Development server
+Consulta de Produtos:
+Tela onde serão apresentados todos os produtos cadastrados possibilitando a pesquisa por código e/ou categoria (opções: atacado, varejo, internacional, todos).
+Deve exibir uma lista contendo código do produto, nome, categoria.
+Inclusão:
+Tela para permitir a inclusão de um produto novo, permitindo informar código (único e não deve repetir), nome e categoria (deve ser uma lista pré-definida). Deve ter as opções de salvar ou voltar para a tela de consulta.
+Alteração:
+Tela para permitir alterar nome e categoria de um produto já existente. Deve ter as opções de salvar ou voltar para a tela de consulta.
+Exclusão:
+Excluir um determinado produto da lista apresentada na tela de consulta, solicitando a confirmação do usuário.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Informações sobre o Projeto
 
-## Code scaffolding
+Este projeto foi gerado via [Angular CLI](https://github.com/angular/angular-cli) na versão 13.3.2.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Servidor de desenvolvimento
 
-## Build
+Execute o comando `json-server --watch src/assets/db.json` para iniciar um servidor backend local. A rota de acesso é `http://localhost:3000/`. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Após executar a subida do servidor backend local, em outro terminal execute o comando `ng serve` para iniciar um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar algum dos arquivos de origem.
 
-## Running unit tests
+## Incrementar código
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `ng generate component nome-do-componente` para gerar um novo componente. Você também pode usar `ng generate directiva|pipe|service|class|guard|interface|enum|module`.
 
-## Running end-to-end tests
+## Comando para Build da Aplicação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Execute `ng build` para buildar o projeto. Os artefatos de build serão armazenados no diretório `dist/`.
 
-## Further help
+## Mais ajuda
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão geral do Angular CLI e referência de comandos](https://angular.io/cli).
+
+Ou entre em contato via email: ruy.jr.duarte@outlook.com

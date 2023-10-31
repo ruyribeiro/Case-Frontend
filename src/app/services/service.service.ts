@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { first } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { Products } from '../pages/models/products';
+import { IProducts } from '../pages/models/products';
 
 @Injectable({
   providedIn: 'root',
@@ -15,11 +15,11 @@ export class ServiceService {
 
   list() {
     return this.httpClient
-      .get<Products[]>(`${this.API}/products`)
+      .get<IProducts[]>(`${this.API}/products`)
       .pipe(first());
   }
 
-  save(formValue: Products, id?: number) {
+  save(formValue: IProducts, id: string) {
     if (id) {
       return this.update(formValue, id);
     }
@@ -27,22 +27,22 @@ export class ServiceService {
   }
 
   loadById(id: number) {
-    return this.httpClient.get<Products>(`${this.API}/products/${id}`);
+    return this.httpClient.get<IProducts>(`${this.API}/products/${id}`);
   }
 
-  private create(formValue: Products) {
-    return this.httpClient.post<Products>(`${this.API}/products`, formValue);
+  private create(formValue: IProducts) {
+    return this.httpClient.post<IProducts>(`${this.API}/products`, formValue);
   }
 
-  private update(formValue: Products, id: number) {
-    return this.httpClient.put<Products>(
+  private update(formValue: IProducts, id: string) {
+    return this.httpClient.put<IProducts>(
       `${this.API}/products/${id}`,
       formValue
     );
   }
 
-  remove(id: number) {
-    return this.httpClient.delete<Products>(
+  remove(id: string) {
+    return this.httpClient.delete<IProducts>(
       `${this.API}/products/${id}`
     );
   }
