@@ -5,6 +5,7 @@ import { ServiceService } from 'src/app/services/service.service';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IProducts } from '../models/products';
+import { Item } from '../models/columns';
 
 @Component({
   selector: 'app-new-product',
@@ -12,6 +13,26 @@ import { IProducts } from '../models/products';
   styleUrls: ['./new-product.component.scss']
 })
 export class NewProductComponent implements OnInit {
+  itens: Item[] = [
+    {
+      name: 'um',
+      status: 'em dia',
+      initialValue: 123,
+      updatedValue: 1234,
+    },
+    {
+      name: 'dois',
+      status: 'em atraso',
+      initialValue: 123,
+      updatedValue: 1234,
+    },
+    {
+      name: 'tres',
+      status: 'em dia',
+      initialValue: 123,
+      updatedValue: 1234,
+    },
+  ];
 
   form: FormGroup;
 

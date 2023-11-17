@@ -1,0 +1,37 @@
+<div class="spacing">
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>
+          <input type="checkbox" (change)="selectAll($event)">
+        </th>
+        <th>Nome</th>
+        <th>Status</th>
+        <th>Valor atual</th>
+        <th>Valor inicial</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of itens">
+        <td>
+          <input type="checkbox" [checked]="selectedItens.includes(item)" (change)="toggleSelection(item)">
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.status }}</td>
+        <td>{{ item.updatedValue }}</td>
+        <td>{{ item.initialValue }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr style="font-weight: bold;">
+        <td style="text-align: right;" colspan="2">Valor total</td>
+        <td></td>
+        <td></td>
+        <td style="text-align: center;">{{ calcularValorTotal() | currency: 'BRL' }}</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</div>

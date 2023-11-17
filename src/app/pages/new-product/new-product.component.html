@@ -2,6 +2,11 @@
     <mat-toolbar>
       <span>{{ titlePage }}</span>
     </mat-toolbar>
+
+    <div>
+      <app-toggle-form [itens]="itens"></app-toggle-form>
+    </div>
+
   <mat-card-content>
     <form [formGroup]="form" class="min-width">
       <mat-form-field class="full-width">

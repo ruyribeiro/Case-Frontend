@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,13 +16,15 @@ import { HomeComponent } from './home/home.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ModalConfirmationComponent } from '../components/modal-confirmation/modal-confirmation.component';
+import { ToggleFormComponent } from './toggle-form/toggle-form.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     NewProductComponent,
-    ModalConfirmationComponent
+    ModalConfirmationComponent,
+    ToggleFormComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { ModalConfirmationComponent } from '../components/modal-confirmation/mod
     MatFormFieldModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

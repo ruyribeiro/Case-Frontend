@@ -1,9 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IProducts } from '../models/products';
 import { ServiceService } from '../../services/service.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { log } from 'console';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalConfirmationComponent } from 'src/app/components/modal-confirmation/modal-confirmation.component';
